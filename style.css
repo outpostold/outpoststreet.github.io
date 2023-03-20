@@ -1,0 +1,50 @@
+/* Styling for the fullscreen image */
+.fullscreen-image {
+  height: 100vh;
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-text {
+  text-align: center;
+  color: white;
+}
+
+/* Styling for the postcard slider */
+.postcard-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.postcard {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 100vh;
+  transform: translateY(100vh);
+  transition: transform 0.5s ease-in-out;
+}
+
+.postcard img {
+  width: 100%;
+  height: auto;
+}
+
+.postcard h2 {
+  margin: 10px 0;
+}
+
+.postcard p {
+  margin: 0;
+}
+
+/* Styling for the postcard animation */
+.postcard.show {
+  transform: translateY(0);
+}
