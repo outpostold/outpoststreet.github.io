@@ -1,25 +1,73 @@
-<div class="fullscreen-image">
-  <div class="image-text">
-    <h1>Welcome to my website</h1>
-    <p>Scroll down to see more</p>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Overpass&display=swap">
-  </div>
-</div>
-
-<div class="postcard-slider">
-  <div class="postcard">
-    <img src="postcard1.jpg" alt="Postcard 1">
-    <h2>Postcard 1</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam, nisl a ultrices consequat, quam turpis gravida magna, a vehicula justo eros non purus.</p>
-  </div>
-  <div class="postcard">
-    <img src="postcard2.jpg" alt="Postcard 2">
-    <h2>Postcard 2</h2>
-    <p>Curabitur in mauris mattis, ornare turpis a, laoreet nisi. Morbi euismod eros at nunc sollicitudin, in dignissim sapien dictum.</p>
-  </div>
-  <div class="postcard">
-    <img src="postcard3.jpg" alt="Postcard 3">
-    <h2>Postcard 3</h2>
-    <p>Suspendisse potenti. Aenean non libero non justo iaculis vehicula. Nunc eu magna semper, consectetur quam ut, tincidunt massa.</p>
-  </div>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Collection</title>
+	<link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #121212;
+			overflow-x: hidden; /* Added overflow-x property */
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			position: relative;
+		}
+		.container::before, .container::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			opacity: 0;
+			transition: opacity 0.5s ease-out;
+		}
+		.container:hover::before {
+			background-color: rgba(0,0,0,0.5);
+			filter: none;
+			opacity: 1;
+		}
+		img {
+			width: auto;
+			height: 80%;
+			margin-bottom: 20px;
+			transition: transform 0.5s, box-shadow 0.5s, filter 0.5s ease-out;
+		}
+		.container:hover img {
+			filter: brightness(50%) blur(3px);
+		}
+		.text {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: #fff;
+			font-size: 35px;
+			border-radius: 5px;
+			white-space: nowrap;
+			font-family: 'Overpass', sans-serif;
+            opacity: 0%
+            transition: opacity 0.5s ease-out, filter 0.5s ease-out;
+            filter: blur(5px);
+		}
+		.container:hover .text {
+            transition: opacity 0.5s ease-in, filter 0.5s ease-in;
+			display: block;
+            opacity: 100%;
+            filter: blur(0px);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="collection1.png" usemap="#image-map">
+		<div class="text">Colored California</div>
+	</div>
+</body>
+</html>
