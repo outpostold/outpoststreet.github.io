@@ -8,7 +8,7 @@
 			margin: 0;
 			padding: 0;
 			background-color: #121212;
-			overflow-x: hidden; /* Added overflow-x property */
+			overflow-x: hidden;
 		}
 		.container {
 			display: flex;
@@ -33,41 +33,46 @@
 			opacity: 1;
 		}
 		img {
-			width: auto;
-			height: 80%;
-			margin-bottom: 20px;
-			transition: transform 0.5s, box-shadow 0.5s, filter 0.5s ease-out;
-		}
+            max-width: 100%;
+            max-height: calc(80vh - 20px);
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 20px;
+            transition: transform 0.5s, box-shadow 0.5s, filter 0.5s ease-out;
+        }
 		.container:hover img {
 			filter: brightness(50%) blur(3px);
 		}
 		.text {
-			display: block;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			color: #fff;
-			font-size: 35px;
-			border-radius: 5px;
-			white-space: nowrap;
-			font-family: 'Overpass', sans-serif;
-            opacity: 0%
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 35px;
+            border-radius: 5px;
+            white-space: nowrap;
+            font-family: 'Overpass', sans-serif;
+            opacity: 0;
             transition: opacity 0.5s ease-out, filter 0.5s ease-out;
-            filter: blur(5px);
-		}
+            filter: blur(3px);
+        }
 		.container:hover .text {
-            transition: opacity 0.5s ease-in, filter 0.5s ease-in;
-			display: block;
+            display: block;
             opacity: 100%;
             filter: blur(0px);
-		}
-	</style>
+            transition: opacity 0.5s ease-in, filter 0.5s ease-in;
+        }
+    </style>
 </head>
 <body>
-	<div class="container">
-		<img src="collection1.png" usemap="#image-map">
-		<div class="text">Colored California</div>
-	</div>
+    <div class="container">
+        <a href="link1.html">
+            <img src="collection1.png" usemap="#image-map">
+        </a>
+        <div class="text">Colored California</div>
+  </div>
 </body>
 </html>
