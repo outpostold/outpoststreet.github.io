@@ -10,6 +10,17 @@
 			background-color: #121212;
 			overflow-x: hidden;
 		}
+		.header {
+			background-image: url('header.png');
+			background-attachment: fixed;
+			background-size: cover;
+			background-position: center;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+/* 			filter: brightness(50%) blur(3px); */
+		}
 		.container {
 			display: flex;
 			flex-direction: column;
@@ -68,6 +79,7 @@
     </style>
 </head>
 <body>
+	<header class="header"></header>
     <div class="container">
         <a href="link1.html">
             <img src="collection1.png" usemap="colored-california">
