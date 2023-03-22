@@ -6,35 +6,36 @@
 		body {
 			margin: 0;
 			padding: 0;
-			background: url("background.png") no-repeat center center fixed;
-			background-size: cover;
+			background-color: #000000; /* set a black background color */
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			height: 100vh;
 		}
+
 		h1 {
 			font-family: 'Overpass', sans-serif;
 			font-size: 5rem;
 			color: #fff;
-			text-shadow: 2px 2px #000;
 		}
+
 		.overlay {
-			position: absolute;
+			display: none; /* hide the overlay element */
+		}
+
+		body::before {
+			content: "";
+			position: fixed;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			pointer-events: none;
-		}
-		.overlay img {
-			max-width: 80%;
-			max-height: 80%;
-			opacity: 0.5;
-			pointer-events: none;
+			background-image: url("background.png"); /* set the background image */
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			filter: blur(3px) brightness(50%); /* add a 3px blur and 50% brightness */
+			z-index: -1;
 		}
 	</style>
 	<link href="https://fonts.googleapis.com/css?family=Overpass:400,700&display=swap" rel="stylesheet">
