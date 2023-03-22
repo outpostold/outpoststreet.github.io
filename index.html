@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>OutpostStreet</title>
-	<link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-			background-color: #121212;
-			overflow-x: hidden;
-		}
-		.header {
-			background-image: url('header.png');
-			background-attachment: fixed;
-			background-size: cover;
-			background-position: center;
-			height: 100vh;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-/* 			filter: brightness(50%) blur(3px); */
-		}
-		.container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 100vh;
-			position: relative;
-		}
-		.container::before, .container::after {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 1;
-			opacity: 0;
-			transition: opacity 0.5s ease-out;
-		}
-		.container:hover::before {
-			background-color: rgba(0,0,0,0.5);
-			filter: none;
-			opacity: 1;
-		}
-		img {
+    <title>OutpostStreet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            overflow-x: hidden;
+        }
+        .header {
+            background-image: url('header.png');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: brightness(50%) blur(0px);
+            transition: filter 0.5s ease-out;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+        .container::before, .container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+        .container:hover::before {
+            background-color: rgba(0,0,0,0.5);
+            filter: none;
+            opacity: 1;
+        }
+        img {
             max-width: 100%;
             max-height: calc(80vh - 20px);
             width: auto;
@@ -52,10 +53,10 @@
             margin-bottom: 20px;
             transition: transform 0.5s, box-shadow 0.5s, filter 0.5s ease-out;
         }
-		.container:hover img {
-			filter: brightness(50%) blur(3px);
-		}
-		.text {
+        .container:hover img {
+            filter: brightness(50%) blur(3px);
+        }
+        .text {
             display: block;
             position: absolute;
             top: 50%;
@@ -70,7 +71,7 @@
             transition: opacity 0.5s ease-out, filter 0.5s ease-out;
             filter: blur(3px);
         }
-		.container:hover .text {
+        .container:hover .text {
             display: block;
             opacity: 100%;
             filter: blur(0px);
@@ -79,12 +80,19 @@
     </style>
 </head>
 <body>
-	<header class="header"></header>
+    <header class="header"></header>
     <div class="container">
         <a href="link1.html">
             <img src="collection1.png" usemap="colored-california">
         </a>
         <div class="text">Colored California</div>
-  </div>
+    </div>
+    <script>
+        window.addEventListener("scroll", function() {
+            const header = document.querySelector(".header");
+            const scrollPosition = window.pageYOffset;
+            header.style.filter = `brightness(50%) blur(${scrollPosition/50}px)`;
+        });
+    </script>
 </body>
 </html>
