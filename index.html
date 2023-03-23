@@ -104,11 +104,15 @@
             const intensity = 1 - (distanceFromCenter / maxDistance);
 
             // Blur and darken image
-            img.style.filter = `brightness(${50 - 50 * intensity}%) blur(${3 * intensity}px)`;
+            const blurAmount = 3 * intensity;
+            const brightnessAmount = 50 - 50 * intensity;
+            img.style.filter = `brightness(${brightnessAmount}%) blur(${blurAmount}px)`;
 
             // Sharpen and make text more opaque
-            text.style.filter = `blur(${3 * (1 - intensity)}px)`;
-            text.style.opacity = `${1 - intensity}`;
+            const sharpenAmount = 3 * (1 - intensity);
+            const opacityAmount = intensity;
+            text.style.filter = `blur(${sharpenAmount}px)`;
+            text.style.opacity = `${opacityAmount}`;
         });
     </script>
 </body>
