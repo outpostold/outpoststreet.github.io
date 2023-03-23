@@ -19,8 +19,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            filter: blur(0px);
+            filter: brightness(50%) blur(3px);
             transition: filter 0.5s ease-out;
+        }
+        .header.no-filter {
+            filter: none;
         }
         .container {
             display: flex;
@@ -54,7 +57,7 @@
             transition: transform 0.5s, box-shadow 0.5s, filter 0.5s ease-out;
         }
         .container:hover img {
-            filter: brightness(50%) blur(3px);
+            filter: brightness(100%) blur(0px);
         }
         .text {
             display: block;
@@ -72,7 +75,6 @@
             filter: blur(3px);
         }
         .container:hover .text {
-            display: block;
             opacity: 100%;
             filter: blur(0px);
             transition: opacity 0.5s ease-in, filter 0.5s ease-in;
@@ -91,7 +93,11 @@
         window.addEventListener("scroll", function() {
             const header = document.querySelector(".header");
             const scrollPosition = window.pageYOffset;
-            header.style.filter = `header.style.filter = `header.style.filter = header.style.filter = `blur(${scrollPosition/50}px) brightness(${scrollPosition/50}%)`;
+            if (scrollPosition === 0) {
+                header.classList.remove("no-filter");
+            } else {
+                header.classList.add("no-filter");
+            }
         });
     </script>
 </body>
