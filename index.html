@@ -93,6 +93,23 @@
             const scrollPosition = window.pageYOffset;
             header.style.filter = `header.style.filter = `header.style.filter = header.style.filter = `blur(${scrollPosition/50}px) brightness(${scrollPosition/50}%)`;
         });
+        const container = document.querySelector('.container');
+        const img = container.querySelector('img');
+        const text = container.querySelector('.text');
+        const containerRect = container.getBoundingClientRect();
+        const maxDistance = Math.sqrt(Math.pow(containerRect.width/2, 2) + Math.pow(containerRect.height/2, 2));
+
+        container.addEventListener('mousemove', (event) => {
+            const distanceFromCenter = Math.sqrt(Math.pow(event.clientX - containerRect.left - containerRect.width/2, 2) + Math.pow(event.clientY - containerRect.top - containerRect.height/2, 2));
+            const intensity = 1 - (distanceFromCenter / maxDistance);
+
+            // Blur and darken image
+            img.style.filter = `brightness(${50 - 50 * intensity}%) blur(${3 * intensity}px)`;
+
+            // Sharpen and make text more opaque
+            text.style.filter = `blur(${3 * (1 - intensity)}px)`;
+            text.style.opacity = `${1 - intensity}`;
+        });
     </script>
 </body>
 </html>
