@@ -91,7 +91,7 @@
         window.addEventListener("scroll", function() {
             const header = document.querySelector(".header");
             const scrollPosition = window.pageYOffset;
-            header.style.filter = `header.style.filter = `brightness(${Math.min(scrollPosition/50, 0.5)*100}%)`;
+            header.style.filter = `header.style.filter = `header.style.filter = `blur(${(scrollPosition/50)/3*100}%)`;
 
         });
     </script>
