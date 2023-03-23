@@ -87,17 +87,21 @@
         <a href="link1.html">
             <img src="collection1.png" usemap="colored-california">
         </a>
-        <div class="text">California</div>
+        <div class="text" id="scroll-text">California</div>
     </div>
     <script>
+        const textElement = document.querySelector(".text");
+        const scrollThreshold = 10;
+
         window.addEventListener("scroll", function() {
-            const header = document.querySelector(".header");
-            const scrollPosition = window.pageYOffset;
-            if (scrollPosition === 0) {
-                header.classList.remove("no-filter");
-            } else {
-                header.classList.add("no-filter");
-            }
+          const scrollPosition = window.pageYOffset;
+          if (scrollPosition <= scrollThreshold) {
+            textElement.style.opacity = "1";
+            textElement.style.filter = "blur(0px)";
+          } else {
+            textElement.style.opacity = "0";
+            textElement.style.filter = "blur(3px)";
+          }
         });
     </script>
 </body>
