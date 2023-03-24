@@ -70,11 +70,9 @@
             border-radius: 5px;
             white-space: nowrap;
             font-family: 'Overpass', sans-serif;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s ease-out, filter 0.5s ease-out;
+            opacity: 1;
+            transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out;
             filter: blur(3px);
-            font-weight: bold;
         }
         .container:hover .text {
             opacity: 100%;
@@ -82,7 +80,7 @@
             filter: blur(0px);
             transition: opacity 0.5s ease-in, filter 0.5s ease-in;
         }
-/*         #header {
+        #header {
           position: fixed;
           top: 0;
           left: 0;
@@ -101,7 +99,7 @@
         #header.scrolled {
           filter: blur(3px);
           opacity: 0.5;
-        } */
+        }
     </style>
 </head>
 <body>
