@@ -32,20 +32,13 @@
             justify-content: center;
             height: 100vh;
             position: relative;
+        .container {
+          filter: none;
+          transition: filter 0.5s ease-out;
         }
-        .container::before, .container::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            opacity: 0;
-            transition: opacity 0.5s ease-out;
-        }
-        .container:hover::before {
-            background-color: rgba(0,0,0,0.5);
-            filter: none;
-            opacity: 1;
+        .container:hover {
+          filter: brightness(50%) blur(3px);
+          transition: filter 0.5s ease-out;
         }
         img {
             max-width: 100%;
