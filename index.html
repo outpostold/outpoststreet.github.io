@@ -71,11 +71,14 @@
             white-space: nowrap;
             font-family: 'Overpass', sans-serif;
             opacity: 0;
+            visibility: hidden;
             transition: opacity 0.5s ease-out, filter 0.5s ease-out;
             filter: blur(3px);
+            font-weight: bold;
         }
         .container:hover .text {
             opacity: 100%;
+            visibility: visible;
             filter: blur(0px);
             transition: opacity 0.5s ease-in, filter 0.5s ease-in;
         }
