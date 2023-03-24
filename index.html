@@ -80,7 +80,7 @@
             filter: blur(0px);
             transition: opacity 0.5s ease-in, filter 0.5s ease-in;
         }
-        #header {
+        h1 {
           position: fixed;
           top: 0;
           left: 0;
@@ -89,20 +89,22 @@
           text-align: center;
           font-size: 5rem;
           font-family: 'Overpass', sans-serif;
-          color: white;
+          color: #fff;
           opacity: 0;
           display: none;
           transition: opacity 0.5s, filter 0.5s;
           top: 50%;
           transform: translateY(-50%); 
         }
-        #header.scrolled {
+        h1.scrolled {
           filter: blur(3px);
           opacity: 0.5;
         }
     </style>
 </head>
 <body>
+    <h1>OutpostStreet</h1>
+    
     <header class="header"></header>
     <div class="container">
         <a href="link1.html">
@@ -121,16 +123,16 @@
                 header.classList.add("no-filter");
             }
         });
-        const header = document.getElementById('header');
+        
         function updateHeader() {
           if (window.scrollY === 0) {
-            header.style.display = 'block';
-            header.style.opacity = 1;
-            header.classList.remove('scrolled');
+            h1.style.display = 'block';
+            h1.style.opacity = 1;
+            h1.classList.remove('scrolled');
           } else {
-            header.style.display = 'block';
-            header.style.opacity = 1;
-            header.classList.remove('scrolled');
+            h1.style.display = 'block';
+            h1.style.opacity = 1;
+            h1.classList.remove('scrolled');
           }
         }
         window.addEventListener('scroll', updateHeader);
