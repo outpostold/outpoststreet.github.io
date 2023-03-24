@@ -100,6 +100,18 @@
                 header.classList.add("no-filter");
             }
         });
+        window.addEventListener("scroll", function() {
+            const header = document.querySelector(".header");
+            const scrollPosition = window.pageYOffset;
+            if (scrollPosition === 0) {
+                header.classList.remove("no-filter");
+            } else {
+                header.classList.add("no-filter");
+            }
+
+            const text = document.querySelector(".text");
+            text.style.top = `${scrollPosition * 0.5}px`;
+        });
     </script>
 </body>
 </html>
