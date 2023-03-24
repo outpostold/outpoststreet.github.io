@@ -94,13 +94,20 @@
         window.addEventListener("scroll", function() {
             const header = document.querySelector(".header");
             const scrollPosition = window.pageYOffset;
+
+            header.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
+
             if (scrollPosition === 0) {
                 header.classList.remove("no-filter");
             } else {
                 header.classList.add("no-filter");
             }
-        }
-        header.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+
+            const text = document.querySelector(".text");
+            text.style.top = `50%`;
+            text.style.transform = `translate(-50%, -${scrollPosition * 0.25}px)`;
+            text.style.opacity = `${100 - scrollPosition * 0.1}%`;
+            text.style.filter = `blur(${scrollPosition * 0.03}px)`;
         });
     </script>
 </body>
