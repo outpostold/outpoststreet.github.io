@@ -10,7 +10,7 @@
             background-color: #121212;
             overflow-x: hidden;
         }
-        .header {
+/*         .header {
             background-image: url('header.png');
             background-attachment: fixed;
             background-size: cover;
@@ -24,7 +24,7 @@
         }
         .header.no-filter {
             filter: none;
-        }
+        } */
         .container {
             display: flex;
             flex-direction: column;
@@ -70,7 +70,7 @@
             border-radius: 5px;
             white-space: nowrap;
             font-family: 'Overpass', sans-serif;
-            opacity: 25%;
+            opacity: 0%;
             transition: opacity 0.5s ease-out, filter 0.5s ease-out, transform 0.5s ease-out;
             filter: blur(3px);
         }
@@ -102,19 +102,6 @@
                 header.classList.add("no-filter");
             }
         });
-        
-        function updateHeader() {
-          if (window.scrollY === 0) {
-            h1.style.display = 'block';
-            h1.style.opacity = 1;
-            h1.classList.remove('scrolled');
-          } else {
-            h1.style.display = 'block';
-            h1.style.opacity = 1;
-            h1.classList.remove('scrolled');
-          }
-        }
-        window.addEventListener('scroll', updateHeader);
     </script>
 </body>
 </html>
