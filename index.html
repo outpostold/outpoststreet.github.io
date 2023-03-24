@@ -121,19 +121,6 @@
                 header.classList.add("no-filter");
             }
         });
-        const header = document.getElementById('header');
-        function updateHeader() {
-          if (window.scrollY === 0) {
-            header.style.display = 'block';
-            header.style.opacity = 1;
-            header.classList.remove('scrolled');
-          } else {
-            header.style.display = 'none';
-            header.style.opacity = 0;
-            header.classList.add('scrolled');
-          }
-        }
-        window.addEventListener('scroll', updateHeader);
     </script>
 </body>
 </html>
